@@ -1,92 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 14% 6%;
+    --foreground: 60 5% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 14% 9%;
+    --card-foreground: 60 5% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 14% 9%;
+    --popover-foreground: 60 5% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 58 100% 50%;
+    --primary-foreground: 220 14% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 14% 14%;
+    --secondary-foreground: 60 5% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14% 12%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 58 100% 50%;
+    --accent-foreground: 220 14% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 60 5% 92%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 14% 16%;
+    --input: 220 14% 14%;
+    --ring: 58 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --neon: #f5e642;
+    --neon-dim: #c4b800;
+    --surface: #0e1015;
+    --surface-2: #141720;
+    --surface-3: #1a1e2a;
+    --text-muted: #6b7280;
   }
 }
 
@@ -97,5 +52,302 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--surface);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .font-rajdhani {
+    font-family: "Rajdhani", sans-serif;
+  }
+  .font-oswald {
+    font-family: "Oswald", sans-serif;
+  }
+  .font-mono-custom {
+    font-family: "IBM Plex Mono", monospace;
+  }
+
+  .neon-text {
+    color: var(--neon);
+    text-shadow: 0 0 20px rgba(245, 230, 66, 0.5);
+  }
+
+  .neon-border {
+    border-color: var(--neon);
+    box-shadow: 0 0 12px rgba(245, 230, 66, 0.2);
+  }
+
+  .neon-bg {
+    background-color: var(--neon);
+    color: var(--surface);
+  }
+
+  .card-surface {
+    background-color: var(--surface-2);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .card-surface-3 {
+    background-color: var(--surface-3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .clip-corner {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 12px) 0,
+      100% 12px,
+      100% 100%,
+      12px 100%,
+      0 calc(100% - 12px)
+    );
+  }
+
+  .clip-corner-lg {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 20px) 0,
+      100% 20px,
+      100% 100%,
+      20px 100%,
+      0 calc(100% - 20px)
+    );
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(245, 230, 66, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 230, 66, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanline::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+  }
+
+  .nav-link {
+    position: relative;
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon);
+    transition: width 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--neon);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: var(--neon);
+  }
+
+  .stat-bar {
+    height: 4px;
+    background: var(--surface-3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .stat-bar-fill {
+    height: 100%;
+    background: var(--neon);
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+
+  .rank-badge {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    background: var(--surface-3);
+    border: 1px solid rgba(245, 230, 66, 0.3);
+    color: var(--neon);
+    padding: 2px 8px;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+
+  .live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff4444;
+    box-shadow: 0 0 8px #ff4444;
+    animation: livePulse 1.5s infinite;
+  }
+
+  @keyframes livePulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.8);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes glitch {
+    0% {
+      clip-path: inset(40% 0 61% 0);
+      transform: translate(-2px, 0);
+    }
+    20% {
+      clip-path: inset(92% 0 1% 0);
+      transform: translate(2px, 0);
+    }
+    40% {
+      clip-path: inset(43% 0 1% 0);
+      transform: translate(0, 0);
+    }
+    60% {
+      clip-path: inset(25% 0 58% 0);
+      transform: translate(2px, 0);
+    }
+    80% {
+      clip-path: inset(54% 0 7% 0);
+      transform: translate(-2px, 0);
+    }
+    100% {
+      clip-path: inset(58% 0 43% 0);
+      transform: translate(0, 0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.5s ease forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .hover-card-lift {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .hover-card-lift:hover {
+    transform: translateY(-3px);
+    border-color: rgba(245, 230, 66, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(245, 230, 66, 0.08);
+  }
+
+  .section-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--neon);
+  }
+
+  .tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: var(--surface-2);
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(245, 230, 66, 0.3);
+    border-radius: 2px;
   }
 }

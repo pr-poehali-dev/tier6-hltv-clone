@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import NewsSection from '@/components/NewsSection';
 import TeamsSection from '@/components/TeamsSection';
 import PlayersSection from '@/components/PlayersSection';
-import TournamentsSection from '@/components/TournamentsSection';
 import RankingsSection from '@/components/RankingsSection';
 import StatsSection from '@/components/StatsSection';
 import Footer from '@/components/Footer';
@@ -35,10 +33,6 @@ export default function Index() {
           <HeroSection />
         </div>
 
-        <div id="news">
-          <NewsSection />
-        </div>
-
         <div id="teams">
           <TeamsSection />
         </div>
@@ -49,10 +43,6 @@ export default function Index() {
 
         <div id="rankings">
           <RankingsSection />
-        </div>
-
-        <div id="tournaments">
-          <TournamentsSection />
         </div>
 
         <div id="stats">

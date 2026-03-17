@@ -1,21 +1,13 @@
-import Icon from '@/components/ui/icon';
-
-const liveMatches = [
-  { team1: 'NIGHTFALL', team2: 'AXIOM', score1: 12, score2: 9, map: 'Mirage', status: 'LIVE' },
-  { team1: 'GHOST5', team2: 'RECON', score1: 7, score2: 7, map: 'Inferno', status: 'LIVE' },
-];
-
 const topStats = [
-  { label: 'Активных игроков', value: '2,847' },
-  { label: 'Команд', value: '312' },
-  { label: 'Турниров в 2025', value: '48' },
-  { label: 'Матчей сыграно', value: '18,492' },
+  { label: 'Игроков', value: '1' },
+  { label: 'Команд', value: '1' },
+  { label: 'Матчей сыграно', value: '—' },
+  { label: 'Турниров', value: '—' },
 ];
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-14 overflow-hidden grid-bg">
-      {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
@@ -29,7 +21,6 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-4 w-full py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left — headline */}
           <div>
             <div className="section-label mb-4 opacity-0 animate-fade-in-up" style={{ animationFillMode: 'forwards' }}>
               // КИБЕРСПОРТ TIER 6 СЦЕНА
@@ -48,60 +39,60 @@ export default function HeroSection() {
               className="font-rajdhani text-lg mb-8 max-w-md opacity-0 animate-fade-in-up delay-200"
               style={{ color: 'var(--text-muted)', animationFillMode: 'forwards' }}
             >
-              Рейтинги, статистика, профили игроков и турниры андеграунд сцены Counter-Strike в одном месте.
+              Рейтинги, статистика и профили игроков андеграунд сцены Counter-Strike.
             </p>
             <div
               className="flex flex-wrap gap-3 opacity-0 animate-fade-in-up delay-300"
               style={{ animationFillMode: 'forwards' }}
             >
-              <button className="clip-corner neon-bg px-6 py-2.5 font-oswald font-semibold tracking-wider text-sm hover:opacity-90 transition-opacity flex items-center gap-2">
-                <Icon name="Trophy" size={16} />
+              <button className="clip-corner neon-bg px-6 py-2.5 font-oswald font-semibold tracking-wider text-sm hover:opacity-90 transition-opacity">
                 РЕЙТИНГИ
               </button>
               <button
-                className="clip-corner px-6 py-2.5 font-oswald font-semibold tracking-wider text-sm transition-colors flex items-center gap-2"
+                className="clip-corner px-6 py-2.5 font-oswald font-semibold tracking-wider text-sm transition-colors"
                 style={{ border: '1px solid rgba(245,230,66,0.3)', color: 'var(--neon)' }}
               >
-                <Icon name="Users" size={16} />
                 КОМАНДЫ
               </button>
             </div>
           </div>
 
-          {/* Right — live matches + stats */}
           <div className="space-y-4">
-            <div className="section-label mb-3 flex items-center gap-2">
-              <span className="live-dot" />
-              МАТЧИ В ЭФИРЕ
-            </div>
-            {liveMatches.map((match, i) => (
-              <div
-                key={i}
-                className="card-surface clip-corner p-4 hover-card-lift cursor-pointer opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${0.3 + i * 0.1}s`, animationFillMode: 'forwards' }}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <div className="font-oswald font-bold text-white text-lg">{match.team1}</div>
-                  </div>
-                  <div className="px-4 text-center">
-                    <div className="font-mono-custom font-bold text-xl neon-text">
-                      {match.score1} : {match.score2}
-                    </div>
-                    <div className="font-mono-custom text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
-                      {match.map}
-                    </div>
-                  </div>
-                  <div className="flex-1 text-right">
-                    <div className="font-oswald font-bold text-white text-lg">{match.team2}</div>
+            <div className="section-label mb-3">// FEATURED PLAYER</div>
+            <div
+              className="card-surface clip-corner-lg p-6 opacity-0 animate-fade-in-up delay-300"
+              style={{ animationFillMode: 'forwards' }}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="font-oswald font-bold text-3xl neon-text">spokyso</div>
+                  <div className="font-rajdhani text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+                    Echofall · 🇷🇺
                   </div>
                 </div>
+                <div
+                  className="text-xs font-mono-custom font-bold px-3 py-1 clip-corner"
+                  style={{ background: 'var(--surface-3)', color: 'var(--neon)', border: '1px solid rgba(245,230,66,0.3)' }}
+                >
+                  #1 RU
+                </div>
               </div>
-            ))}
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'Rating 2.0', value: '—' },
+                  { label: 'K/D', value: '—' },
+                  { label: 'ADR', value: '—' },
+                ].map((s) => (
+                  <div key={s.label}>
+                    <div className="font-mono-custom font-bold text-xl text-white">{s.value}</div>
+                    <div className="font-rajdhani text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-            {/* Stats bar */}
             <div
-              className="grid grid-cols-2 gap-3 mt-6 opacity-0 animate-fade-in-up delay-500"
+              className="grid grid-cols-2 gap-3 opacity-0 animate-fade-in-up delay-400"
               style={{ animationFillMode: 'forwards' }}
             >
               {topStats.map((s, i) => (

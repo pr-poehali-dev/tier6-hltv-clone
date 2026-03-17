@@ -3,11 +3,9 @@ import Icon from '@/components/ui/icon';
 
 const navItems = [
   { label: 'Главная', id: 'home' },
-  { label: 'Новости', id: 'news' },
   { label: 'Команды', id: 'teams' },
   { label: 'Игроки', id: 'players' },
   { label: 'Рейтинги', id: 'rankings' },
-  { label: 'Турниры', id: 'tournaments' },
   { label: 'Статистика', id: 'stats' },
 ];
 
@@ -50,10 +48,6 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
 
         {/* Right */}
         <div className="flex items-center gap-3">
-          <div className="hidden md:flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-            <span className="live-dot" />
-            <span>LIVE</span>
-          </div>
           <button className="hidden md:flex items-center gap-1 clip-corner neon-bg px-3 py-1.5 text-xs font-oswald font-semibold tracking-wider hover:opacity-90 transition-opacity">
             ВОЙТИ
           </button>
